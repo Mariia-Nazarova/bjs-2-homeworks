@@ -8,18 +8,18 @@ function solveEquation(a, b, c) {
   if (d > 0) {
     r1 = (-b + Math.sqrt(d)) / (2 * a);    r2 = (-b - Math.sqrt(d)) / (2 * a);
     let arr = [r1,r2];
-    console.log(arr);
+    return arr;
   }
 
   else 
   if (d == 0) {
     r1 = r2 = -b / (2 * a);
     let arr = [r1];
-    console.log(arr);
+    return arr;
   }
 
   else {
-      console.log([]);
+    return [];
   }
 }
 
@@ -29,5 +29,6 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let n = countMonths; // количество месяцев
   let payment = S * (P + P / ((1 + P) ** n - 1));
   // ежемесячный платёж, где S — тело кредита, P — 1/12 процентной ставки (от 0 до 1), n - количество месяцев
-  console.log(parseFloat(payment * n).toFixed(2));
+  let finalPayment = parseFloat(payment * n).toFixed(2);
+  return finalPayment;
 }
